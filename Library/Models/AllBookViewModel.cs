@@ -9,23 +9,19 @@ namespace Library.Models
 
         public int Id { get; set; }
 
-        [StringLength(BookTitleMaxLength, MinimumLength = BookTitleMinLength,
-                   ErrorMessage = "Title length must be between 10 and 50 characters.")]
+        [StringLength(BookTitleMaxLength, MinimumLength = BookTitleMinLength)]
         public string Title { get; set; } = null!;
 
-        [StringLength(BookAuthorMaxLength, MinimumLength = BookAuthorMinLength,
-            ErrorMessage = "Author length must be between 5 and 50 characters.")]
+        [StringLength(BookAuthorMaxLength, MinimumLength = BookAuthorMinLength)]
         public string Author { get; set; } = null!;
 
 
-        [StringLength(BookDescriptionMaxLength, MinimumLength = BookDescriptionMinLength,
-            ErrorMessage = "Description length must be between 5 and 5000 characters.")]
+        [StringLength(BookDescriptionMaxLength, MinimumLength = BookDescriptionMinLength)]
         public string Description { get; set; } = null!;
 
         public string ImageUrl { get; set; } = null!;
 
-        [Range(BookRatingMinValue, BookRatingMaxValue,
-                ErrorMessage = "Rating must be between 0.00 and 10.00")]
+        [Range(BookRatingMinValue, BookRatingMaxValue)]
         public decimal Rating { get; set; }
 
         public string Category { get; set; } = null!;
