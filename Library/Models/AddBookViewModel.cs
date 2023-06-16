@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Library.Data.Models;
+
 using static Library.Common.DataModelConstants;
 
 namespace Library.Models
@@ -18,7 +18,7 @@ namespace Library.Models
 
         public string Url { get; set; } = null!;
 
-        [Range(BookRatingMinValue, BookRatingMaxValue)]
+        [Range(BookRatingMinValue, BookRatingMaxValue)] 
         public decimal Rating { get; set; }
 
         [Range(0,int.MaxValue)]

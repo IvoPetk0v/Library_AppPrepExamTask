@@ -1,8 +1,8 @@
-﻿using Library.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Library.Models;
+using Library.Services.Interfaces;
 
 namespace Library.Controllers
 {

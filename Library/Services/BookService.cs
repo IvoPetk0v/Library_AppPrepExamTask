@@ -109,7 +109,7 @@ namespace Library.Services
         {
             var userBook = await dbContext
                 .IdentityUsersBooks
-                .Where(ub => ub.CollectorId == id && ub.BookId==model.Id)
+                .Where(ub => ub.CollectorId == id && ub.BookId == model.Id)
                 .FirstOrDefaultAsync();
 
             if (userBook != null)
@@ -117,8 +117,6 @@ namespace Library.Services
                 dbContext.IdentityUsersBooks.Remove(userBook);
                 await dbContext.SaveChangesAsync();
             }
-
-            return;
         }
     }
 }
