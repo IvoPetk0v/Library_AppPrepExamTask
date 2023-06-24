@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Library.Models;
@@ -9,11 +10,14 @@ namespace Library.Controllers
     [Authorize]
     public class BookController : Controller
     {
+
         private IBookService bookService;
 
         public BookController(IBookService bookService)
         {
             this.bookService = bookService;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
         }
         private string GetUserId()
         {
@@ -47,6 +51,7 @@ namespace Library.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddBookViewModel model)
         {
+           
             if (ModelState.IsValid == false)
             {
                 return View(model);
